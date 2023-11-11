@@ -1,0 +1,113 @@
+@font-face {
+  font-family: "youngserif";
+  src: url(../Fonts/YoungSerif-Regular.ttf);
+}
+@font-face {
+  font-family: "lalezar";
+  src: url(../Fonts/Lalezar-Regular.ttf);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background: url("../Imasges/489112.jpg");
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.container {
+  width: 600px;
+  /* display: flex; */
+  /* justify-content: center; */
+  /* align-items: center; */
+}
+.container .header {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: #49494b;
+  text-align: center;
+  padding: 15px 40px 30px;
+}
+.container .header h2 {
+  margin: 10px;
+  font-size: 35px;
+  font-family: "lalezar";
+}
+input {
+  width: 75%;
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 16px;
+  float: left;
+}
+.addBtn {
+  width: 25%;
+  float: left;
+  border: none;
+  padding: 10px;
+  background: #d9d9d9;
+  color: #555;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.addBtn:hover {
+  background-color: #bbb;
+}
+.container .header::after {
+  content: "";
+  display: table;
+  clear: both;
+}
+.container .taskList {
+  max-height: 300px;
+  overflow-y: auto;
+}
+.taskList {
+  list-style-type: none;
+}
+.taskList li {
+  font-family: "youngserif";
+  cursor: pointer;
+  position: relative;
+  padding: 12px 8px 12px 40px;
+  background: #eee;
+  font-size: 18px;
+  transition: 0.3s;
+  user-select: none;
+}
+.taskList li:hover {
+  background: rgb(205, 204, 205);
+}
+.closeBtn {
+  display: none;
+  position: absolute;
+  right: 15px;
+}
+ul li:hover .closeBtn {
+  display: inline-block;
+}
+ul li .closeBtn i:hover {
+  color: #ec1d1d;
+}
+
+.taskList li.done {
+  background: #888;
+  color: #fff;
+  text-decoration: line-through;
+}
+.taskList li.done::before {
+  content: "";
+  width: 8px;
+  height: 16px;
+  position: absolute;
+  left: 15px;
+  top: 8px;
+  border-color: #fff;
+  border-width: 0 2px 2px 0;
+  border-style: solid;
+  transform: rotate(45deg);
+}
